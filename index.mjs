@@ -1,6 +1,6 @@
-import objectRefCounter from './src/objectRefCounter.mjs';
+import refManager from './src/refManager.mjs';
 
-const ref = objectRefCounter();
+const ref = refManager();
 
 const moduleA = {
   name: 'Jero',
@@ -12,19 +12,20 @@ const moduleB = {
   age: 10,
 };
 
-const moduleC = {
-  name: 'Douglas',
-  age: 65,
-}
+// const moduleC = {
+//   name: 'Douglas',
+//   age: 65,
+// }
 
-ref.add(moduleA);
+
+// import objectRefCounter from './src/objectRefCounter.mjs';
+
+// const ref = objectRefCounter();
+
 ref.add(moduleA);
 ref.add(moduleB);
-ref.add(moduleC);
+ref.add(moduleA);
+ref.add(moduleA);
+ref.add(moduleA);
 
-const countA = ref.getCount(moduleA);
-const countB = ref.getCount(moduleB);
-const countC = ref.getCount(moduleC);
-
-
-console.log('countB', countB);
+ref.getCount(moduleA);
