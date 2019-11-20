@@ -1,20 +1,13 @@
+import isNil from './utils/isNil';
 
-export default function refManager(equals, retained) {
-  
-  if (!equals) {
-    equals = (a, b) => a === b;
-  }
-
-  if (!retained) {
-    retained = () => false;
-  }
+export default function refManager() {
 
   const cache = new WeakMap();
 
   return {
 
     getCount(obj) {
-      if (obj === undefined || obj === null) {
+      if (isNil(obj)) {
         return 0;
       }
 
@@ -22,7 +15,7 @@ export default function refManager(equals, retained) {
     },
 
     add(obj) {
-      if (obj === undefined || obj === null) {
+      if (isNil(obj)) {
         return;
       }
       const item = cache.has(obj);
