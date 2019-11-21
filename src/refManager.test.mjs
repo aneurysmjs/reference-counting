@@ -23,4 +23,19 @@ describe('refManager with WeakMap', () => {
     expect(countObjA).toBe(4);
   });
 
+  it('should remove a refence', () => {
+    const rc = refManager();
+    rc.add(objA);
+    rc.add(objA);
+    rc.add(objA);
+    rc.add(objA);
+
+    rc.remove(objA);
+    rc.remove(objA);
+    rc.remove(objA);
+    rc.remove(objA);
+    const countObjA = rc.getCount(objA);
+    expect(countObjA).toBe(0);
+  });
+
 });

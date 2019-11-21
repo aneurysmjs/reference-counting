@@ -1,4 +1,4 @@
-import isNil from './utils/isNil';
+import isNil from './utils/isNil.mjs';
 
 export default function refManager() {
 
@@ -27,6 +27,23 @@ export default function refManager() {
         let objCount = cache.get(obj);
         cache.set(obj, objCount += 1);
       }
+    },
+    remove(obj) {
+      const item = cache.has(obj);
+
+      if (!item) {
+        return false;
+      }
+
+      let objCount = cache.get(obj);
+      cache.set(obj, objCount -= 1);
+
+      if (objCount === 0) {
+        cache.delete(obj);
+        return true;
+      }
+
+      return false;
     }
   };
 }

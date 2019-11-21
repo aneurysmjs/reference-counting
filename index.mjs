@@ -28,4 +28,11 @@ ref.add(moduleA);
 ref.add(moduleA);
 ref.add(moduleA);
 
+
+ref.remove(moduleA);
+ref.remove(moduleA);
+ref.remove(moduleA);
+ref.remove(moduleA);
+ref.remove(moduleA);
+
 ref.getCount(moduleA);
