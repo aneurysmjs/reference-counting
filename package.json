@@ -16,12 +16,12 @@
     "test": "jest --watch"
   },
   "devDependencies": {
-    "@babel/core": "7.7.2",
-    "@babel/preset-env": "7.7.1",
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.6",
     "babel-jest": "24.9.0",
     "commitizen": "4.0.3",
     "cz-conventional-changelog": "3.0.2",
     "jest": "24.9.0",
-    "rollup": "1.27.2"
+    "rollup": "1.27.13"
   }
 }
